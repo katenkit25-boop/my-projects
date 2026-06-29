@@ -19,3 +19,7 @@ Thumbs.db
 
 # Claude Code локальные настройки
 .claude/settings.local.json
+
+# Python cache
+__pycache__/
+*.pyc
