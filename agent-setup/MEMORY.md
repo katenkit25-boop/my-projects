@@ -41,6 +41,7 @@
 - Основной инструмент — таблицы и выгрузки статистики (Excel/CSV).
 - **Python 3.12** + **pandas** + **openpyxl** установлены локально (для работы с таблицами).
 - **Скилл `spreadsheet-ops`** (в `.claude/skills/`) — анализ/обработка Excel/CSV: объединение, чистка, статистика, формулы, графики. Источник — SkillsMP (skillsmp.com), бесплатный каталог скиллов с API.
+- **Скиллы из awesome-llm-apps** (github.com/Shubhamsaboo/awesome-llm-apps, папка `awesome_agent_skills/`): `data-analyst`, `email-drafter`, `meeting-notes`, `project-planner`. Этот же репо — источник встроенных `content-creator` и `fullstack-developer` (они уже были в шаблоне).
 
 ---
 
