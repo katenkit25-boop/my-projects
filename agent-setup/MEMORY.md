@@ -99,6 +99,7 @@
 - `knowledge/instagram-neuro-main-product.md` — основной продукт «Нейро-Система» (2 990 ₽): 7 видеоуроков, 500 промптов, бонусы. Читать когда собираем/продаём основной продукт.
 - `knowledge/instagram-neuro-week2-plan.md` — контент-план второй недели (4 Reels + Telegram по дням + запуск основного продукта).
 - `knowledge/instagram-neuro-telegram-posts.md` — 3 готовых прогревающих поста для Telegram на старт.
+- `knowledge/instagram-neuro-pack1-content-prompts.md` — Пак 1 «Контент для соцсетей»: 100 промптов (часть Нейро-Системы). Остальные паки (работа, учёба, дом, заработок) — пока не собраны.
 
 ---
 
