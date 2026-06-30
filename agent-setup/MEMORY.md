@@ -100,7 +100,8 @@
 - `knowledge/instagram-neuro-week2-plan.md` — контент-план второй недели (4 Reels + Telegram по дням + запуск основного продукта).
 - `knowledge/instagram-neuro-telegram-posts.md` — 3 готовых прогревающих поста для Telegram на старт.
 - `knowledge/instagram-neuro-pack1-content-prompts.md` — Пак 1 «Контент для соцсетей»: 100 промптов (часть Нейро-Системы). Остальные паки (работа, учёба, дом, заработок) — пока не собраны.
-- `knowledge/instagram-neuro-video-production.md` — как делать видеоуроки без своего голоса и лица (ИИ-озвучка CapCut/ElevenLabs + запись экрана) + готовый сценарий Урока 1. Сценарии уроков 2-7 — пока не написаны.
+- `knowledge/instagram-neuro-video-production.md` — как делать видеоуроки без своего голоса и лица (ИИ-озвучка CapCut/ElevenLabs + запись экрана + авто-слайды Gamma) + готовый сценарий Урока 1.
+- `knowledge/instagram-neuro-lessons-2-7-scripts.md` — готовые сценарии уроков 2-7 «Нейро-Системы» (закадр + что на экране). Все 7 уроков теперь написаны.
 
 ---
 
