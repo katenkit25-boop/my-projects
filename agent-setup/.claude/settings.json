@@ -52,9 +52,17 @@
       "/home/agent/projects"
     ]
   },
-  "effortLevel": "xhigh",
-  "skipDangerousModePermissionPrompt": true,
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true
-  }
+    "superpowers@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "telegram@claude-plugins-official": true,
+    "remember@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true
+  },
+  "effortLevel": "xhigh",
+  "skipDangerousModePermissionPrompt": true
 }
