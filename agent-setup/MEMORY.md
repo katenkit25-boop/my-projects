@@ -101,7 +101,9 @@
 - `knowledge/instagram-neuro-telegram-posts.md` — 3 готовых прогревающих поста для Telegram на старт.
 - `knowledge/instagram-neuro-pack1-content-prompts.md` — Пак 1 «Контент для соцсетей»: 100 промптов (часть Нейро-Системы).
 - `knowledge/instagram-neuro-pack2-work-prompts.md` — Пак 2 «Работа и бизнес»: 100 промптов.
-- `knowledge/instagram-neuro-pack3-study-prompts.md` — Пак 3 «Учёба и языки»: 50 промптов. Осталось собрать паки 4 (дом/семья) и 5 (заработок) + 3 бонуса.
+- `knowledge/instagram-neuro-pack3-study-prompts.md` — Пак 3 «Учёба и языки»: 50 промптов.
+- `knowledge/instagram-neuro-pack4-home-prompts.md` — Пак 4 «Дом, семья, жизнь»: 100 промптов.
+- `knowledge/instagram-neuro-pack5-income-prompts.md` — Пак 5 «Заработок с ИИ»: 50 промптов. Все 5 паков (500 промптов) готовы. Осталось 3 бонуса (шаблон контент-плана, чек-лист нейросетей, промпт-конструктор).
 - `knowledge/instagram-neuro-video-production.md` — как делать видеоуроки без своего голоса и лица (ИИ-озвучка CapCut/ElevenLabs + запись экрана + авто-слайды Gamma) + готовый сценарий Урока 1.
 - `knowledge/instagram-neuro-lessons-2-7-scripts.md` — готовые сценарии уроков 2-7 «Нейро-Системы» (закадр + что на экране). Все 7 уроков теперь написаны.
 
