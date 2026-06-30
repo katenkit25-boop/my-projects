@@ -103,7 +103,10 @@
 - `knowledge/instagram-neuro-pack2-work-prompts.md` — Пак 2 «Работа и бизнес»: 100 промптов.
 - `knowledge/instagram-neuro-pack3-study-prompts.md` — Пак 3 «Учёба и языки»: 50 промптов.
 - `knowledge/instagram-neuro-pack4-home-prompts.md` — Пак 4 «Дом, семья, жизнь»: 100 промптов.
-- `knowledge/instagram-neuro-pack5-income-prompts.md` — Пак 5 «Заработок с ИИ»: 50 промптов. Все 5 паков (500 промптов) готовы. Осталось 3 бонуса (шаблон контент-плана, чек-лист нейросетей, промпт-конструктор).
+- `knowledge/instagram-neuro-pack5-income-prompts.md` — Пак 5 «Заработок с ИИ»: 50 промптов. Все 5 паков (500 промптов) готовы.
+- `knowledge/instagram-neuro-bonus-checklist.md` — бонус: чек-лист «10 нейросетей с доступом из РФ».
+- `knowledge/instagram-neuro-bonus-prompt-constructor.md` — бонус: промпт-конструктор (формула из 6 блоков + примеры).
+- `knowledge/instagram-neuro-bonus-content-plan.xlsx` — бонус: Excel-шаблон контент-плана (3 листа, выпадающие списки, подсветка статусов). Продукт «Нейро-Система» собран ПОЛНОСТЬЮ: структура + 7 сценариев + метод записи + 500 промптов + 3 бонуса.
 - `knowledge/instagram-neuro-video-production.md` — как делать видеоуроки без своего голоса и лица (ИИ-озвучка CapCut/ElevenLabs + запись экрана + авто-слайды Gamma) + готовый сценарий Урока 1.
 - `knowledge/instagram-neuro-lessons-2-7-scripts.md` — готовые сценарии уроков 2-7 «Нейро-Системы» (закадр + что на экране). Все 7 уроков теперь написаны.
 
