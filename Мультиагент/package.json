@@ -1,0 +1,16 @@
+{
+  "name": "multiagent-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Мультиагентный контент-бот: 5 ролей (маркетолог, копирайтер, дизайнер, телеграм-агент, редактор) → пост в Telegram. Текст — через Claude Code (подписка), картинки — через OpenAI.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "grammy": "^1.31.0",
+    "node-cron": "^3.0.3",
+    "openai": "^4.67.0"
+  }
+}

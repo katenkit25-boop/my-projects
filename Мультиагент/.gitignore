@@ -18,6 +18,10 @@ tmp/
 .cache/
 _progress.md
 
+# --- Черновики (сгенерированные картинки не тащим в git) ---
+drafts/*
+!drafts/.gitkeep
+
 # --- ОС и редакторы ---
 .DS_Store
 Thumbs.db
