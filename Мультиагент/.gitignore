@@ -1,0 +1,30 @@
+# --- Секреты ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# --- Зависимости ---
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# --- Логи и временное ---
+*.log
+logs/
+tmp/
+.cache/
+_progress.md
+
+# --- ОС и редакторы ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Сборки / выгрузки ---
+dist/
+build/
+out/
