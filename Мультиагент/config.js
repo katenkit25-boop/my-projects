@@ -21,7 +21,7 @@ export const config = {
   },
   models: {
     // Модели переключаются прямо в .env, без правки кода.
-    text: process.env.TEXT_MODEL || "claude-sonnet-5", // текст-агенты (Claude Code, на подписке)
+    text: process.env.TEXT_MODEL || "sonnet", // текст-агенты (Claude Code, на подписке)
     image: process.env.IMAGE_MODEL || "gpt-image-1", // картинки (OpenAI)
   },
   openaiApiKey: required("OPENAI_API_KEY"), // нужен только для картинок
