@@ -1,6 +1,6 @@
 // index.js — Telegram-бот на polling (без вебхуков).
 // Дирижирует ролями, присылает пост тебе на проверку и публикует ТОЛЬКО после «да».
-import { Bot, InputFile } from "grammy";
+import { Bot, InputFile, InlineKeyboard } from "grammy";
 import cron from "node-cron";
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -14,6 +14,13 @@ const PLAN_PATH = join(process.cwd(), "content-plan.md");
 // Один пост «на проверке» за раз + флаг занятости (чтобы не запускать две генерации разом)
 let pending = null; // { topic, text, imagePath }
 let busy = false;
+let awaitingEdits = false; // ждём текст правок после нажатия кнопки «✏️ Правки»
+
+// Кнопки под постом на проверке
+const reviewKeyboard = new InlineKeyboard()
+  .text("✅ Да", "approve")
+  .text("✏️ Правки", "revise")
+  .text("❌ Нет", "reject");
 
 // ─── Отправка поста (фото с подписью или просто текст) ───
 async function sendPost(target, post) {
@@ -65,10 +72,10 @@ async function generateAndReview(topic, chatId) {
 
     const post = await buildPost(topic, onStep);
     pending = { topic, ...post };
+    awaitingEdits = false;
 
     await sendPost(chatId, post);
-    await bot.api.sendMessage(chatId,
-      "👆 Публикуем в канал?\n\n✅ ответь «да»\n✏️ «правки: …» — что поменять\n❌ «нет» — отклонить");
+    await bot.api.sendMessage(chatId, "👆 Публикуем в канал?", { reply_markup: reviewKeyboard });
   } catch (e) {
     await bot.api.sendMessage(chatId, `❌ Ошибка при сборке поста: ${e.message}`);
   } finally {
@@ -107,7 +114,7 @@ ${pending.text}
 Верни только исправленный HTML-пост.`
     );
     await sendPost(chatId, pending);
-    await bot.api.sendMessage(chatId, "Так лучше? ✅ «да» / ✏️ «правки: …» / ❌ «нет»");
+    await bot.api.sendMessage(chatId, "Так лучше?", { reply_markup: reviewKeyboard });
   } catch (e) {
     await bot.api.sendMessage(chatId, `❌ Ошибка правок: ${e.message}`);
   } finally {
@@ -138,6 +145,12 @@ bot.on("message:text", async (ctx) => {
   const raw = ctx.message.text.trim();
   const t = raw.toLowerCase();
 
+  // Пришёл текст правок после нажатия кнопки «✏️ Правки»
+  if (awaitingEdits) {
+    awaitingEdits = false;
+    return revise(ctx.chat.id, raw || "сделай короче и живее");
+  }
+
   if (t === "да" || t.startsWith("публик")) return publish(ctx.chat.id);
   if (t.startsWith("правк")) {
     const instr = raw.replace(/^правки?:?\s*/i, "").trim();
@@ -146,6 +159,28 @@ bot.on("message:text", async (ctx) => {
   if (t === "нет" || t.startsWith("отклон")) {
     pending = null;
     return ctx.reply("❌ Отклонено. В канал не пошло.");
+  }
+});
+
+// ─── Нажатия на кнопки (✅ Да / ✏️ Правки / ❌ Нет) ───
+bot.on("callback_query:data", async (ctx) => {
+  if (String(ctx.from.id) !== String(config.telegram.adminId)) return ctx.answerCallbackQuery();
+  const action = ctx.callbackQuery.data;
+  await ctx.answerCallbackQuery();               // убрать «часики» на кнопке
+  await ctx.editMessageReplyMarkup().catch(() => {}); // убрать кнопки, чтобы не нажать дважды
+
+  if (!pending) return;
+  const chatId = ctx.chat.id;
+
+  if (action === "approve") return publish(chatId);
+  if (action === "reject") {
+    pending = null;
+    awaitingEdits = false;
+    return ctx.reply("❌ Отклонено. В канал не пошло.");
+  }
+  if (action === "revise") {
+    awaitingEdits = true;
+    return ctx.reply("✏️ Напиши одним сообщением, что поправить.");
   }
 });
 
