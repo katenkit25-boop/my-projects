@@ -24,6 +24,7 @@ export const config = {
     text: process.env.TEXT_MODEL || "sonnet", // текст-агенты (Claude Code, на подписке)
     image: process.env.IMAGE_MODEL || "gpt-image-1", // картинки (OpenAI)
   },
-  openaiApiKey: required("OPENAI_API_KEY"), // нужен только для картинок
+  // Нужен только для картинок. Без него бот работает — посты идут без обложек.
+  openaiApiKey: process.env.OPENAI_API_KEY || "",
   postTime: process.env.POST_TIME || "10:00", // во сколько бот сам генерит пост
 };

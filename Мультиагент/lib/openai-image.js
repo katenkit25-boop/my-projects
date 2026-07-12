@@ -4,7 +4,16 @@ import OpenAI from "openai";
 import { writeFile } from "node:fs/promises";
 import { config } from "../config.js";
 
-const client = new OpenAI({ apiKey: config.openaiApiKey });
+// Ленивое создание клиента: без ключа бот не падает на старте,
+// а картинки просто пропускаются (см. try/catch в orchestrator.js).
+let client = null;
+function getClient() {
+  if (!config.openaiApiKey) {
+    throw new Error("OPENAI_API_KEY не задан — картинки отключены");
+  }
+  if (!client) client = new OpenAI({ apiKey: config.openaiApiKey });
+  return client;
+}
 
 /**
  * Сгенерировать картинку и сохранить в файл.
@@ -13,7 +22,7 @@ const client = new OpenAI({ apiKey: config.openaiApiKey });
  * @returns {Promise<string>} путь к сохранённому файлу
  */
 export async function generateImage(prompt, outPath) {
-  const res = await client.images.generate({
+  const res = await getClient().images.generate({
     model: config.models.image,
     prompt,
     size: "1024x1024",
